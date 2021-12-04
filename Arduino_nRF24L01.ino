@@ -14,8 +14,10 @@
 #define buttonID 0b00000011
 #define delayButtonPush 5000 //задержка после нажатия кнопки в мс
 
+
 // Глобальные переменные =====================================================
 
+u08 TX_data[2] = {buttonID, 0xF0};
 u08 pushButtonStatus = 0;
 
 
@@ -80,7 +82,7 @@ void ButtonPush(void)
 	sbi(Button_PORT,ButtonOut); //отправляем на выход 1 (как бы нажимаем кнопку)
 	SetTimerTask(ButtonPull,500);
 	USART_SendStr("SENDING BYTE");
-	nRF_send_byte(buttonID);
+	nRF_send_data(TX_data, 2);
 }
 
 void ButtonPull(void)
@@ -106,8 +108,8 @@ void parsingUART(void)
 		}
 		else if (temp == 'b')
 		{
-			USART_SendStr("SENDING BYTE");
-			nRF_send_byte(buttonID);
+			USART_SendStr("SENDING BYTE");	
+ 			nRF_send_data(TX_data, 2);
 		}
 	}
 }
@@ -118,7 +120,7 @@ void parsing_nRF24(void)
 	if ((temp = nRF_get_byte()))
 	{
 		USART_SendStr("RECEIVING BYTE: ");
-		USART_PutChar(temp);
+		USART_SendNum(temp);
 		SetTimerTask(CheckButtonPush, delayButtonPush); // в следующий раз будем проверять кнопку через 3с
 	}
 }

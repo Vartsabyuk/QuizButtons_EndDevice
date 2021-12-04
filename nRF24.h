@@ -59,11 +59,13 @@
 #define NOP                             0xFF //команда заглушка, ничего не делает.
 
 extern u08 ReadReg(u08 addr);
+extern void ReadData(u08 *data, u08 size);
 extern void WriteReg(u08 addr,u08 byte);
+extern void WriteData(u08 *data, u08 size);
 extern void RXmod(void);
 extern void TXmod(void);
 extern void nRF_init(void);	
-extern void nRF_send_byte(u08 byte);
+extern void nRF_send_data(u08 *data, u08 size);
 extern void nRF_IRQ_handler(void);
 extern u08 nRF_get_byte(void);
 

@@ -54,7 +54,7 @@ void nRF_init(void)
 	//Настроим радиомодуль nRF на прием.
     WriteReg(CONFIG,(1<<PWR_UP)|(1<<EN_CRC)|(0<<PRIM_RX));
     _delay_ms(2);
-    WriteReg(RX_PW_P0,1);//размер поля данных 1 байт.
+    WriteReg(RX_PW_P0,2);//размер поля данных 1 байт.
 	RXmod();//на прием
 	
 }
@@ -73,6 +73,20 @@ u08 ReadReg(u08 addr)
 	return SPDR;
 }
 
+void ReadData(u08 *data, u08 size)
+{
+	cbi(spi_PORT, SS); 			//Прижимаем вывод CSN(SS) МК к земле, тем самым сообщаем о начале обмена данных.
+	SPDR = R_RX_PAYLOAD; 			//используем команду чтения из буфера приема
+	while(BitIsClear(SPSR, SPIF)); 	//ожидаем когда освободится SPI 
+	for (u08 i = 0; i < size; i++)
+    {
+    	SPDR = NOP; 					//Закидываем пустышку чтобы вытащить еще байт
+    	while(BitIsClear(SPSR, SPIF));	//ожидаем когда освободится SPI
+        data[i] = SPDR;					//записываем очередной байт    
+    }
+	sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
+}
+
 void WriteReg(u08 addr,u08 byte)	
 {
     cbi(spi_PORT,SS); 			//Прижимаем вывод CSN(SS) МК к земле, тем самым сообщаем о начале обмена данных.
@@ -84,6 +98,21 @@ void WriteReg(u08 addr,u08 byte)
     sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
 }
 
+void WriteData(u08 *data, u08 size)
+{
+	cbi(spi_PORT,SS); 			//Прижимаем вывод CSN(SS) МК к земле, тем самым сообщаем о начале обмена данных.
+    SPDR = W_TX_PAYLOAD;		//используем команду записи в буфер отправки;
+    while(BitIsClear(SPSR,SPIF)); 	//ожидаем когда освободится SPI
+    for (u08 i = 0; i < size; i++)
+    {
+        SPDR = data[i];					//закидываем очередной байт
+        while(BitIsClear(SPSR,SPIF));	//ожидаем когда освободится SPI
+    }
+    u08 temp;
+    temp = SPDR;				//это для сброса флага SPIF
+    sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
+}
+
 void RXmod(void)//Настроим nRF на прием.
 {
     WriteReg(CONFIG,(1<<PWR_UP)|(1<<EN_CRC)|(1<<PRIM_RX));
@@ -91,6 +120,7 @@ void RXmod(void)//Настроим nRF на прием.
     //_delay_us(135);
     //режим приема RX
 }
+
 void TXmod(void)//Настроим nRF на передачу и сразу же отправим байт в пространство.
 {
     cbi(PORT_CE,CE);
@@ -100,15 +130,17 @@ void TXmod(void)//Настроим nRF на передачу и сразу же 
     cbi(PORT_CE,CE);
     //_delay_us(135);
 }
-void nRF_send_byte(u08 byte)//отправка байта.
+
+void nRF_send_data(u08 *data, u08 size)//отправка данных
 {
-    WriteReg(W_TX_PAYLOAD, byte);//запись байта в буфер TX для отправки
-    TXmod();//передача байта
+    WriteData(data, size);//запись пакета данных в буфер TX для отправки
+    TXmod();//передача данных
     //while (BitIsSet(PIN_IRQ,IRQ));//Ждем пока байт не передан
     //u08 temp = ReadReg(STATUS);//прочитали статус регистр
     //WriteReg(STATUS, temp);//сброс флагов прерываний - обязательно
     //RXmod();//на прием
 }
+
 void nRF_IRQ_handler(void)
 {
 	if (BitIsClear(PIN_IRQ,IRQ))  //если ножка IRQ прижата
@@ -117,7 +149,10 @@ void nRF_IRQ_handler(void)
 		WriteReg(STATUS, status);//сброс флагов прерываний - обязательно
 		if (BitIsSet(status,RX_DR)) //если этот бит равен 1 то байт принят.
 		{
-			nRF_RX_buf = ReadReg(R_RX_PAYLOAD); //чтение 1 байта из буфера приема RX_FIFO в озу buff
+			//nRF_RX_buf = ReadReg(R_RX_PAYLOAD); //чтение 1 байта из буфера приема RX_FIFO в озу buff
+			u08 temp[2];
+			ReadData(temp, 2);
+			nRF_RX_buf = temp[0];
 		}
 		else if (BitIsSet(status,TX_DS)) //если этот бит равен 1 то байт передан.)
 		{
@@ -125,6 +160,7 @@ void nRF_IRQ_handler(void)
 		}
 	}
 }
+
 u08 nRF_get_byte(void)
 {
 	u08 temp = nRF_RX_buf;

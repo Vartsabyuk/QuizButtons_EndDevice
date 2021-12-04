@@ -34,62 +34,10 @@
 			}
 		},
 		{
-			"file": "avrlibdefs.h",
-			"settings":
-			{
-				"buffer_size": 2223,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "avrlibtypes.h",
-			"settings":
-			{
-				"buffer_size": 2138,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "EERTOSHAL.c",
-			"settings":
-			{
-				"buffer_size": 493,
-				"encoding": "Cyrillic (Windows 1251)",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "EERTOSHAL.h",
-			"settings":
-			{
-				"buffer_size": 280,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "EERTOS.c",
-			"settings":
-			{
-				"buffer_size": 4641,
-				"encoding": "Cyrillic (Windows 1251)",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "EERTOS.h",
-			"settings":
-			{
-				"buffer_size": 499,
-				"encoding": "Western (Windows 1252)",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "Arduino_nRF24L01.ino",
 			"settings":
 			{
-				"buffer_size": 3314,
+				"buffer_size": 3356,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -98,7 +46,7 @@
 			"file": "nRF24.h",
 			"settings":
 			{
-				"buffer_size": 2716,
+				"buffer_size": 2814,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -116,26 +64,8 @@
 			"file": "nRF24.c",
 			"settings":
 			{
-				"buffer_size": 4961,
+				"buffer_size": 6234,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/nRF24L01.c",
-			"settings":
-			{
-				"buffer_size": 1833,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
-			"settings":
-			{
-				"buffer_size": 26759,
-				"encoding": "Cyrillic (Windows 1251)",
 				"line_ending": "Windows"
 			}
 		},
@@ -210,17 +140,24 @@
 	],
 	"file_history":
 	[
+		"/D/Program/Arduino Project/Arduino+nRF24L01/avrlibdefs.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/avrlibtypes.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOSHAL.c",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOSHAL.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOS.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOS.c",
+		"/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
+		"/D/Program/Arduino Project/nRF_SPI_USART/Data/nRF24L01.c",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/.gitignore",
 		"/D/Никита/Работа/Cadence/TR-2S/Rev.3.1/FOR_FACTORY/06-700011-0XR3/06-700011-0XR3-1-2.drl",
 		"/D/Program/Arduino Project/ATMEGA328/IIC_ultimate.h",
 		"/D/Program/Arduino Project/ATMEGA328/IIC_ultimate.c",
-		"/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
 		"/D/Program/Arduino Project/Arduino+nRF24L01/RingBuffer.h",
 		"/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/avr/io.h",
 		"/D/Program/Arduino Project/Arduino+nRF24L01/usart.h",
 		"/D/Program/Arduino Project/nRF_SPI_USART/SPI_USART.atsln",
 		"/D/Program/Arduino Project/Arduino+nRF24L01/SPI.h",
 		"/D/Program/Arduino Project/Arduino+nRF24L01/SPI.c",
-		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOSHAL.h",
 		"/D/Program/Arduino Project/Arduino+nRF24L01/Arduino+nRF24L01.ino",
 		"/D/Program/Arduino Project/ATMEGA328/HAL.c",
 		"/D/Program/Arduino Project/ATMEGA328/HAL.h",
@@ -292,7 +229,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -321,7 +258,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -354,190 +291,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "avrlibdefs.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1243,
-								1243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 216.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "avrlibtypes.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2138,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "EERTOSHAL.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 493,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								330,
-								330
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "EERTOSHAL.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 280,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "EERTOS.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4641,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1428,
-								1428
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1890.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "EERTOS.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 499,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								97,
-								97
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
 					"file": "Arduino_nRF24L01.ino",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3314,
+						"buffer_size": 3356,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2356,
-								2356
+								385,
+								385
 							]
 						],
 						"settings":
@@ -546,27 +312,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 3,
 					"file": "nRF24.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2716,
+						"buffer_size": 2814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2454,
-								2454
+								2692,
+								2692
 							]
 						],
 						"settings":
@@ -574,14 +340,14 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 4,
 					"file": "RingBuffer.h",
 					"semi_transient": false,
 					"settings":
@@ -606,24 +372,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 5,
 					"file": "nRF24.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4961,
+						"buffer_size": 6234,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3019,
-								3019
+								2464,
+								2464
 							]
 						],
 						"settings":
@@ -632,72 +398,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 972.0,
+						"translation.y": 864.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/nRF24L01.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1833,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								111,
-								97
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								795,
-								795
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9018.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
+					"buffer": 6,
 					"file": "usart.c",
 					"semi_transient": false,
 					"settings":
@@ -723,11 +431,11 @@
 						"translation.y": 3024.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 7,
 					"file": "usart.h",
 					"semi_transient": false,
 					"settings":
@@ -751,11 +459,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 8,
 					"file": "/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/avr/iom328p.h",
 					"semi_transient": false,
 					"settings":
@@ -781,7 +489,7 @@
 						"translation.y": 14331.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
