@@ -1,0 +1,880 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nRF",
+				"nRF_RX_buf"
+			],
+			[
+				"spi",
+				"spi_PORT"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "HAL.c",
+			"settings":
+			{
+				"buffer_size": 773,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "HAL.h",
+			"settings":
+			{
+				"buffer_size": 1154,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "avrlibdefs.h",
+			"settings":
+			{
+				"buffer_size": 2223,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "avrlibtypes.h",
+			"settings":
+			{
+				"buffer_size": 2138,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "EERTOSHAL.c",
+			"settings":
+			{
+				"buffer_size": 493,
+				"encoding": "Cyrillic (Windows 1251)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "EERTOSHAL.h",
+			"settings":
+			{
+				"buffer_size": 280,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "EERTOS.c",
+			"settings":
+			{
+				"buffer_size": 4641,
+				"encoding": "Cyrillic (Windows 1251)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "EERTOS.h",
+			"settings":
+			{
+				"buffer_size": 499,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Arduino_nRF24L01.ino",
+			"settings":
+			{
+				"buffer_size": 3314,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nRF24.h",
+			"settings":
+			{
+				"buffer_size": 2716,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "RingBuffer.h",
+			"settings":
+			{
+				"buffer_size": 10765,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nRF24.c",
+			"settings":
+			{
+				"buffer_size": 4961,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/nRF24L01.c",
+			"settings":
+			{
+				"buffer_size": 1833,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
+			"settings":
+			{
+				"buffer_size": 26759,
+				"encoding": "Cyrillic (Windows 1251)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "usart.c",
+			"settings":
+			{
+				"buffer_size": 11074,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "usart.h",
+			"settings":
+			{
+				"buffer_size": 575,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/avr/iom328p.h",
+			"settings":
+			{
+				"buffer_size": 19528,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package Control",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Program/Arduino Project/Arduino+nRF24L01"
+	],
+	"file_history":
+	[
+		"/D/Никита/Работа/Cadence/TR-2S/Rev.3.1/FOR_FACTORY/06-700011-0XR3/06-700011-0XR3-1-2.drl",
+		"/D/Program/Arduino Project/ATMEGA328/IIC_ultimate.h",
+		"/D/Program/Arduino Project/ATMEGA328/IIC_ultimate.c",
+		"/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/RingBuffer.h",
+		"/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/avr/io.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/usart.h",
+		"/D/Program/Arduino Project/nRF_SPI_USART/SPI_USART.atsln",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/SPI.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/SPI.c",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/EERTOSHAL.h",
+		"/D/Program/Arduino Project/Arduino+nRF24L01/Arduino+nRF24L01.ino",
+		"/D/Program/Arduino Project/ATMEGA328/HAL.c",
+		"/D/Program/Arduino Project/ATMEGA328/HAL.h",
+		"/D/Program/Arduino Project/ATMEGA328/RingBuffer.h",
+		"/D/Program/Arduino Project/ATMEGA328/usart.c",
+		"/D/Program/Arduino Project/ATMEGA328/usart.h",
+		"/D/Program/Arduino Project/ATMEGA328/EERTOSHAL.c",
+		"/D/Program/Arduino Project/ATMEGA328/EERTOS.c",
+		"/D/Program/Arduino Project/ATMEGA328/ATMEGA328.ino",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Танцы_new.ahk",
+		"/D/Никита/Работа/Cadence/RS-3S/allegro/netrev.lst",
+		"/D/Никита/Работа/Cadence/TR-2S/Rev.2.1/allegro/netrev.lst",
+		"/D/Program/Arduino Project/ATMEGA328/avrlibtypes.h",
+		"/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf",
+		"/C/Users/Никита/AppData/Local/Arduino15/config.stino-settings",
+		"/C/Users/Никита/AppData/Local/Arduino15/build/ATMEGA328/last_build.stino-settings",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Танцы.ahk",
+		"/D/Никита/Ragnarok/OriginsRO/AI/USER_AI/Config.lua",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Варка+танцы.ahk",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/SPPauto.ahk",
+		"/D/Никита/Работа/Cadence/TR-3S/allegro/netrev.lst",
+		"/D/Никита/Работа/Cadence/Triumph-Omega-2/TOP_LEDs/REV.3.1/allegro/netrev.lst",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/MushroomsSG.ahk",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/SPP.ahk",
+		"/D/Никита/Работа/Cadence/TR-2S/allegro/shape_state.rpt",
+		"/D/Никита/Работа/Cadence/Triumph-Omega-2/Bottom-2/allegro/05-620242-01R1_1-4.1_b",
+		"/D/Никита/Работа/Cadence/TR-2S/allegro/shape_islands.rpt",
+		"/C/Users/Никита/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Никита/AppData/Roaming/Sublime Text 3/Packages/User/Stino/app_dir.stino-settings",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Varka.ahk",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Mushrooms.ahk",
+		"/D/Никита/Ragnarok/AutoHotkey/AHK 3/Виз+танцы.ahk"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wdt_enable",
+			"wdt",
+			"ss",
+			"miso",
+			"spi"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 8,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "HAL.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								439,
+								439
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "HAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "avrlibdefs.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1243,
+								1243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "avrlibtypes.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "EERTOSHAL.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "EERTOSHAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "EERTOS.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1428,
+								1428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "EERTOS.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Arduino_nRF24L01.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2356,
+								2356
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stino-Stino-Dev/Arduino.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "nRF24.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2454,
+								2454
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "RingBuffer.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "nRF24.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3019,
+								3019
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 972.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/nRF24L01.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								111,
+								97
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/D/Program/Arduino Project/nRF_SPI_USART/Data/init.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								795,
+								795
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9018.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "usart.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4501,
+								4501
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3024.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "usart.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/C/Users/Никита/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/avr/iom328p.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14789,
+								14801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14331.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_build_panel":
+	{
+		"height": 132.0
+	},
+	"output.stino_panel":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "Packages/C++/C Single File.sublime-build",
+	"project": "Arduino+nRF24L01.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
