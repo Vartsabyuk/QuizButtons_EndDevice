@@ -57,8 +57,6 @@ void nRF_init(void)
 	WriteReg(RX_PW_P0, 2);//размер поля данных 2 байта.
     WriteReg(CONFIG,(1<<PWR_UP)|(1<<EN_CRC)|(0<<PRIM_RX));
     _delay_ms(2);
-	//RXmod();//на прием
-	
 }
 
 u08 ReadReg(u08 addr)
@@ -96,7 +94,6 @@ void WriteReg(u08 addr,u08 byte)
     while(BitIsClear(SPSR,SPIF)); 	//ожидаем когда освободится SPI
     SPDR = byte; 				//отправляем непосредственно байт
     while(BitIsClear(SPSR,SPIF));	//ожидаем когда освободится SPI
-    addr = SPDR;				//это для сброса флага SPIF
     sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
 }
 
@@ -110,8 +107,6 @@ void WriteData(u08 *data, u08 size)
         SPDR = data[i];					//закидываем очередной байт
         while(BitIsClear(SPSR,SPIF));	//ожидаем когда освободится SPI
     }
-    u08 temp;
-    temp = SPDR;				//это для сброса флага SPIF
     sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
 }
 
@@ -119,8 +114,6 @@ void flush_TX()
 {
 	cbi(spi_PORT,SS); 			//Прижимаем вывод CSN(SS) МК к земле, тем самым сообщаем о начале обмена данных.
     SPDR = FLUSH_TX;		//используем команду очистки буфера TX;
-    u08 temp;
-    temp = SPDR;				//это для сброса флага SPIF
     sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
 }
 
@@ -146,10 +139,6 @@ void nRF_send_data(u08 *data, u08 size)//отправка данных
 {
     WriteData(data, size);//запись пакета данных в буфер TX для отправки
     TXmod();//передача данных
-    //while (BitIsSet(PIN_IRQ,IRQ));//Ждем пока байт не передан
-    //u08 temp = ReadReg(STATUS);//прочитали статус регистр
-    //WriteReg(STATUS, temp);//сброс флагов прерываний - обязательно
-    //RXmod();//на прием
 }
 
 void nRF_IRQ_handler(void)
@@ -160,9 +149,8 @@ void nRF_IRQ_handler(void)
 		WriteReg(STATUS, status);//сброс флагов прерываний - обязательно
 		if (BitIsSet(status,RX_DR)) //если этот бит равен 1 то байт принят.
 		{
-			//nRF_RX_buf = ReadReg(R_RX_PAYLOAD); //чтение 1 байта из буфера приема RX_FIFO в озу buff
 			u08 temp[2];
-			ReadData(temp, 2);
+			ReadData(temp, 2); //чтение 2 байт из буфера приема RX_FIFO в озу buff
 			nRF_RX_buf = temp[0];
 		}
 		else if (BitIsSet(status,TX_DS)) //если этот бит равен 1 то байт передан.)

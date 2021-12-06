@@ -13,6 +13,8 @@ typedef void (*TPTR)(void);
 extern void SetTask(TPTR TS);
 extern void SetTimerTask(TPTR TS, u16 NewTime);
 
+extern BOOL HaveTasks(void);
+
 extern void TaskManager(void);
 extern void TimerService(void);
 

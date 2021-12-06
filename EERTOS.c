@@ -103,11 +103,24 @@ void SetTimerTask(TPTR TS, u16 NewTime)
 	if (nointerrupted) 	Enable_Interrupt	// Разрешаем прерывания
 }
 
-
+inline BOOL HaveTasks(void)
+{
+	if (TaskQueue_Head != TaskQueue_Tail)               //если буфер задач не пуст
+	{
+		return TRUE; 									// то задачи есть
+	}
+	for(u08 index=0;index!=MainTimerQueueSize;index++)		// Прочесываем очередь таймеров
+	{
+		if(MainTimer[index].GoToTask != Idle)               // если есть задачи
+		{
+			return TRUE;								// то задачи есть
+		}
+	}
+	return FALSE; 				// если добрались до сюда, задач нет
+}
 /*=================================================================================
 Диспетчер задач ОС. Выбирает из очереди задачи и отправляет на выполнение.
 */
-
 inline void TaskManager(void)
 {
 	TPTR GoToTask;
