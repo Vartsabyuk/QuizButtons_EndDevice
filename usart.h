@@ -5,8 +5,8 @@
 #include <RingBuffer.h>
 
 //размер буфера
-#define SIZE_TX_BUF 16
-#define SIZE_RX_BUF 16
+#define SIZE_TX_BUF 32
+#define SIZE_RX_BUF 32
 
 BOOL USART_PutChar(u08 byte); //положить символ в буфер
 extern void USART_Init(void); //инициализация usart`a

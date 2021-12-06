@@ -17,7 +17,7 @@
 
 // Глобальные переменные =====================================================
 
-u08 TX_data[2] = {buttonID, 0xF0};
+u08 TX_data[2] = {buttonID, 0x01};
 u08 pushButtonStatus = 0;
 
 
@@ -108,7 +108,7 @@ void parsingUART(void)
 		}
 		else if (temp == 'b')
 		{
-			USART_SendStr("SENDING BYTE");	
+			USART_SendStr("SENDING ");
  			nRF_send_data(TX_data, 2);
 		}
 	}
@@ -121,6 +121,7 @@ void parsing_nRF24(void)
 	{
 		USART_SendStr("RECEIVING BYTE: ");
 		USART_SendNum(temp);
+		TX_data[1]++;
 		SetTimerTask(CheckButtonPush, delayButtonPush); // в следующий раз будем проверять кнопку через 3с
 	}
 }

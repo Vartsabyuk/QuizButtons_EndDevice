@@ -52,10 +52,12 @@ void nRF_init(void)
 	        SPI2X - Удвоение скорости обмена.*/
 
 	//Настроим радиомодуль nRF на прием.
+	WriteReg(ACTIVATE, 0x73); //активируем регистр FEATURE и спец команды
+	WriteReg(FEATURE, 1<<EN_ACK_PAY); // режим передачи данных вместе с ответом на прием
+	WriteReg(RX_PW_P0, 2);//размер поля данных 2 байта.
     WriteReg(CONFIG,(1<<PWR_UP)|(1<<EN_CRC)|(0<<PRIM_RX));
     _delay_ms(2);
-    WriteReg(RX_PW_P0,2);//размер поля данных 1 байт.
-	RXmod();//на прием
+	//RXmod();//на прием
 	
 }
 
@@ -113,6 +115,15 @@ void WriteData(u08 *data, u08 size)
     sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
 }
 
+void flush_TX()
+{
+	cbi(spi_PORT,SS); 			//Прижимаем вывод CSN(SS) МК к земле, тем самым сообщаем о начале обмена данных.
+    SPDR = FLUSH_TX;		//используем команду очистки буфера TX;
+    u08 temp;
+    temp = SPDR;				//это для сброса флага SPIF
+    sbi(spi_PORT,SS); 			//Вывод CSN(SS) МК к питанию, обмен данных завершен.
+}
+
 void RXmod(void)//Настроим nRF на прием.
 {
     WriteReg(CONFIG,(1<<PWR_UP)|(1<<EN_CRC)|(1<<PRIM_RX));
@@ -156,7 +167,12 @@ void nRF_IRQ_handler(void)
 		}
 		else if (BitIsSet(status,TX_DS)) //если этот бит равен 1 то байт передан.)
 		{
-			RXmod();//переключаемся обратно на прием
+			//RXmod();//переключаемся обратно на прием
+			//flush_TX();
+		}
+		else
+		{
+			flush_TX();
 		}
 	}
 }

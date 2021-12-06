@@ -44,6 +44,27 @@
 /*регистр RX_PW_P0*/
 #define RX_PW_P0        0x11//указываем в нем из скольких байтов будет состоять наше поле данных для отправки.
 
+/*регистр SETUP_RETR*/ //Настройки авторетрансляции
+#define SETUP_RETR 		0x04
+/* 	ARD - SETUP_RETR[7:4] 	Задержка авторетрансляции 
+							0 - 250мкс
+							1 - 500мкс
+							2 - 750мкс
+							.....
+							по умолчанию 0
+	ARC - SETUP_RETR[3:0]	Количество попыток авторетрансляции 
+							0 - 0 попыток
+							1 - 1 попытка
+							....
+							по умолчанию 3
+*/
+
+/*регистр FEATURE*/ // хитрые настройки чипа
+#define FEATURE 		0x1D
+#define EN_DPL			2 // Включить динамическую длину данных
+#define EN_ACK_PAY		1 // Включить отправку данных вместе с ACK пакетом
+#define EN_DYN_ACK 		0 // Включить возможность использовать команду W_TX_PAYLOAD_NOACK
+
 //Описание команд
 #define R_REGISTER                      0x00 //читаем регистр
 #define W_REGISTER                      0x20 //пишем в регистр
@@ -51,17 +72,19 @@
 #define W_TX_PAYLOAD                    0xA0 //запись данных в буфер для отправки в космос
 #define FLUSH_TX                        0xE1 //очистка буфера отправки
 #define FLUSH_RX                        0xE2 //очистка буфера приема
-#define REUSE_TX_PL                     0xE3
-#define ACTIVATE                        0x50 
-#define R_RX_PL_WID                     0x60
-#define W_ACK_PAYLOAD                   0xA8
-#define W_TX_PAYLOAD_NOACK              0x58
+#define REUSE_TX_PL                     0xE3 //повторная пересылка пакетов пока CE высокий 
+#define ACTIVATE                        0x50 //команда за которой надо отправить байт 0x73, тогда станут доступны команды 
+										 	 // R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK, повторная отправка вновь блокирует эти команды    
+#define R_RX_PL_WID                     0x60 // считать размер в байтах принятого пакета находящегося сверху RX FIFO
+#define W_ACK_PAYLOAD                   0xA8 // записать данные для передачи вместе с пакетом ACK в ответ на прием данных (последние 3 бита это номер PIPE)
+#define W_TX_PAYLOAD_NOACK              0x58 // отключает AUTOACK для конктерного входящего пакета
 #define NOP                             0xFF //команда заглушка, ничего не делает.
 
 extern u08 ReadReg(u08 addr);
 extern void ReadData(u08 *data, u08 size);
 extern void WriteReg(u08 addr,u08 byte);
 extern void WriteData(u08 *data, u08 size);
+extern void flush_TX();
 extern void RXmod(void);
 extern void TXmod(void);
 extern void nRF_init(void);	
