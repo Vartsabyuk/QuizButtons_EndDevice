@@ -6,15 +6,25 @@
 #include <EERTOS.h>
 #include <usart.h>
 #include <nRF24.h>
+#include <avr/eeprom.h>
 
 #ifdef __cplusplus
 	}
 #endif
 
-#define buttonID 0b00000011
-// Глобальные переменные =====================================================
+//Команды для управления кнопками
+#define activityButton 		0b01010101 // 0x55
+#define notActivityButton 	0b10101010 // 0xAA
+#define changeNumberButton	0b10011001 // 0x99
 
-u08 TX_data[2] = {buttonID, 0x01};
+
+// Адреса EEPROM
+
+u08 EEMEM buttonID_addr;
+
+// Глобальные переменные =====================================================
+u08 buttonID;
+u08 TX_data[2] = {0x00, 0x01};
 u08 pushButtonStatus = 0;
 
 // Прототипы задач ===========================================================
@@ -151,14 +161,23 @@ void parsingUART(void)
 
 void parsing_nRF24(void)
 {
-	u08 temp;
-	if ((temp = nRF_get_byte()))
+	u08 RX_data[2];
+	nRF_get_data(RX_data);
+	if (RX_data[0])
 	{
 		USART_SendStr("RECEIVING BYTE: ");
-		USART_SendNum(temp);
-		if (temp == 0x55)
+		USART_SendNum(RX_data[0]);
+		if (RX_data[0] == activityButton) //если можно нажимать кнопку
 		{
 			SetTask(ButtonPush); //запускаем обработчик нажатия кнопки
+		}
+		else if (RX_data[0] == changeNumberButton) //если это команда смены номера кнопки
+		{
+			buttonID = RX_data[1]; 		//меняем номер
+			TX_data[0] = buttonID;
+			eeprom_update_byte(&buttonID_addr, buttonID); //перезаписываем это значение в EEPROM
+			eeprom_busy_wait();
+			SetTask(Sleep); // и уходим дальше спать
 		}
 		else
 		{
@@ -166,17 +185,24 @@ void parsing_nRF24(void)
 		}
 		TX_data[1]++;
 	}
+	else
+	{
+		SetTask(Sleep); //если ничего не словили из космоса, ну чтож тоже спать
+	}
 }
 //==============================================================================
 int main(void)
 {
+	//Инициалищация переменных из EEPROM
+	buttonID = eeprom_read_byte(&buttonID_addr);
+	TX_data[0] = buttonID;
+	//---------------------------------------------
 	InitAll();			// Инициализируем периферию
 	USART_Init();		// Инициализация USART
 	nRF_init();			// Инициализация nRF24L01
 	InitRTOS();			// Инициализируем ядро
 	RunRTOS();			// Старт ядра. 
 	// Запуск фоновых задач.
-	//SetTask(CheckButtonPush);
 	SetTask(Sleep);
 	while(1) 		// Главный цикл диспетчера
 	{

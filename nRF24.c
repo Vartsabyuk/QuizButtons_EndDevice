@@ -1,7 +1,7 @@
 #include <nRF24.h>
 
 //приемный буфер
-u08 nRF_RX_buf = 0;
+u08 RX_buf[2] = {0x00, 0x00};
 
 void nRF_init(void)						
 {
@@ -149,9 +149,7 @@ void nRF_IRQ_handler(void)
 		WriteReg(STATUS, status);//сброс флагов прерываний - обязательно
 		if (BitIsSet(status,RX_DR)) //если этот бит равен 1 то байт принят.
 		{
-			u08 temp[2];
-			ReadData(temp, 2); //чтение 2 байт из буфера приема RX_FIFO в озу buff
-			nRF_RX_buf = temp[0];
+			ReadData(RX_buf, 2); //чтение 2 байт из буфера приема RX_FIFO в озу buff
 		}
 		else if (BitIsSet(status,TX_DS)) //если этот бит равен 1 то байт передан.)
 		{
@@ -165,9 +163,9 @@ void nRF_IRQ_handler(void)
 	}
 }
 
-u08 nRF_get_byte(void)
+void nRF_get_data(u08 *data)
 {
-	u08 temp = nRF_RX_buf;
-	nRF_RX_buf = 0;
-	return temp;
+	data[0] = RX_buf[0];
+	data[1] = RX_buf[1];
+	RX_buf[0] = 0; //очищаем буфер
 }

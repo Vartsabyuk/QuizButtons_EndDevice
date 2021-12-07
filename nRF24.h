@@ -90,6 +90,6 @@ extern void TXmod(void);
 extern void nRF_init(void);	
 extern void nRF_send_data(u08 *data, u08 size);
 extern void nRF_IRQ_handler(void);
-extern u08 nRF_get_byte(void);
+extern void nRF_get_data(u08 *data);
 
 #endif
