@@ -2,11 +2,16 @@
 	extern "C" {
 #endif
 
+//#define USART_debugging
+
 #include <HAL.h>
 #include <EERTOS.h>
-#include <usart.h>
 #include <nRF24.h>
 #include <avr/eeprom.h>
+
+#ifdef USART_debugging
+	#include <usart.h>
+#endif
 
 #ifdef __cplusplus
 	}
@@ -33,8 +38,12 @@ void CheckButtonPull(void);
 void ButtonPush(void);
 void ButtonPull(void);
 void Sleep(void);
-void parsingUART(void);
 void parsing_nRF24(void);
+
+#ifdef USART_debugging
+	void parsingUART(void);
+#endif
+
 //============================================================================
 //Верктора прерываний 
 //============================================================================
@@ -58,17 +67,18 @@ void parsing_nRF24(void);
 	{
 		TimerService();
 	}
-
-//Прерывание по опустошению буффера USART
-	ISR (USART_UDRE_vect)
-	{
-		USART_UDRE_Handler();
-	}
-	ISR (USART_RX_vect)
-	{
-		USART_RXC_Handler();
-		SetTask(parsingUART);
-	}
+#ifdef USART_debugging
+	//Прерывание по опустошению буффера USART
+		ISR (USART_UDRE_vect)
+		{
+			USART_UDRE_Handler();
+		}
+		ISR (USART_RX_vect)
+		{
+			USART_RXC_Handler();
+			SetTask(parsingUART);
+		}
+#endif
 #ifdef __cplusplus
 	}
 #endif
@@ -85,7 +95,9 @@ void CheckButtonPush(void)
 	} 
 	if ((pushButtonStatus|0b11111000) == 0xFF) //если последние 3 бита равны 1 (XXXXX111) значит кнопка действительно нажата
 	{
-		USART_SendStr("SENDING BYTE");
+		#ifdef USART_debugging
+			USART_SendStr("SENDING BYTE");
+		#endif
 		nRF_send_data(TX_data, 2);
 		SetTask(CheckButtonPull);
 	}
@@ -135,29 +147,32 @@ void Sleep(void)
   		sleep_mode();
 	}
 }
-void parsingUART(void)
-{
-	u08 temp;
-	if ((temp = USART_GetChar()))
+
+#ifdef USART_debugging
+	void parsingUART(void)
 	{
-		//USART_SendByte(temp);
-		if (temp == 's')
+		u08 temp;
+		if ((temp = USART_GetChar()))
 		{
-			USART_SendStr("STATUS REG: ");
-			USART_PutChar(ReadReg(STATUS));
-		}
-		else if (temp == 'c')
-		{
-			USART_SendStr("CONFIG REG: ");
-			USART_PutChar(ReadReg(CONFIG));
-		}
-		else if (temp == 'b')
-		{
-			USART_SendStr("SENDING ");
- 			nRF_send_data(TX_data, 2);
+			//USART_SendByte(temp);
+			if (temp == 's')
+			{
+				USART_SendStr("STATUS REG: ");
+				USART_PutChar(ReadReg(STATUS));
+			}
+			else if (temp == 'c')
+			{
+				USART_SendStr("CONFIG REG: ");
+				USART_PutChar(ReadReg(CONFIG));
+			}
+			else if (temp == 'b')
+			{
+				USART_SendStr("SENDING ");
+	 			nRF_send_data(TX_data, 2);
+			}
 		}
 	}
-}
+#endif
 
 void parsing_nRF24(void)
 {
@@ -165,8 +180,10 @@ void parsing_nRF24(void)
 	nRF_get_data(RX_data);
 	if (RX_data[0])
 	{
-		USART_SendStr("RECEIVING BYTE: ");
-		USART_SendNum(RX_data[0]);
+		#ifdef USART_debugging
+			USART_SendStr("RECEIVING BYTE: ");
+			USART_SendNum(RX_data[0]);
+		#endif
 		if (RX_data[0] == activityButton) //если можно нажимать кнопку
 		{
 			SetTask(ButtonPush); //запускаем обработчик нажатия кнопки
@@ -198,7 +215,11 @@ int main(void)
 	TX_data[0] = buttonID;
 	//---------------------------------------------
 	InitAll();			// Инициализируем периферию
-	USART_Init();		// Инициализация USART
+
+	#ifdef USART_debugging
+		USART_Init();		// Инициализация USART
+	#endif
+
 	nRF_init();			// Инициализация nRF24L01
 	InitRTOS();			// Инициализируем ядро
 	RunRTOS();			// Старт ядра. 
